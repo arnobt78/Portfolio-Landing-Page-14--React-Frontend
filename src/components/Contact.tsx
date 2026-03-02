@@ -1,3 +1,7 @@
+/**
+ * Contact section: email, phone, social links, and footer credit.
+ * Links use data-cursor="disable" so the custom cursor does not switch to icon mode.
+ */
 import { MdArrowOutward, MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
 

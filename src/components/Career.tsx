@@ -1,3 +1,6 @@
+/**
+ * Career / experience timeline. Animated via GSAP in GsapScroll.ts (career timeline).
+ */
 import "./styles/Career.css";
 
 const Career = () => {

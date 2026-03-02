@@ -1,3 +1,8 @@
+/**
+ * Root component. Wraps the app in LoadingProvider (loading state + loader UI),
+ * then lazy-loads MainContainer (layout + sections) and Character (3D scene).
+ * Suspense shows fallback until each lazy chunk loads.
+ */
 import { lazy, Suspense } from "react";
 import "./App.css";
 

@@ -1,3 +1,4 @@
+/** Derive AES key from password (SHA-256 hash, first 32 bytes) for AES-CBC */
 async function generateAESKey(password: string): Promise<CryptoKey> {
   const passwordBuffer = new TextEncoder().encode(password);
   const hashedPassword = await crypto.subtle.digest("SHA-256", passwordBuffer);
@@ -10,6 +11,7 @@ async function generateAESKey(password: string): Promise<CryptoKey> {
   );
 }
 
+/** Decrypt file at url with password; expects first 16 bytes = IV, rest = ciphertext */
 export const decryptFile = async (
   url: string,
   password: string

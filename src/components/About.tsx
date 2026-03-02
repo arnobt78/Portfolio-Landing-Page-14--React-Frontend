@@ -1,3 +1,6 @@
+/**
+ * About section. Uses .title and .para for GSAP split-text scroll animations (see splitText.ts).
+ */
 import "./styles/About.css";
 
 const About = () => {

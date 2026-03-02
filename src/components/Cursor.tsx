@@ -1,3 +1,7 @@
+/**
+ * Custom cursor: follows mouse with smoothing. data-cursor="icons" snaps
+ * cursor to element and sets hover mode; data-cursor="disable" hides or disables.
+ */
 import { useEffect, useRef } from "react";
 import "./styles/Cursor.css";
 import gsap from "gsap";

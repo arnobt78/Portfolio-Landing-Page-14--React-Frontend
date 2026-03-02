@@ -1,3 +1,6 @@
+/**
+ * Thin wrapper around Scene; keeps App.tsx lazy import simple.
+ */
 import Scene from "./Scene";
 
 const CharacterModel = () => {

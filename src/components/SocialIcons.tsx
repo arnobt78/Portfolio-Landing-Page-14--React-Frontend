@@ -1,3 +1,7 @@
+/**
+ * Side social links + resume button. Each icon span tracks mouse in a small
+ * hit area and sets --siLeft/--siTop on the link for a follow effect.
+ */
 import {
   FaGithub,
   FaInstagram,
@@ -36,7 +40,7 @@ const SocialIcons = () => {
       const onMouseMove = (e: MouseEvent) => {
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-
+        /* Only update target when mouse is in the icon hit area */
         if (x < 40 && x > 10 && y < 40 && y > 5) {
           mouseX = x;
           mouseY = y;

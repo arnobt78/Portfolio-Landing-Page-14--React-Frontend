@@ -1,3 +1,7 @@
+/**
+ * Post-load entry: enables scroll, runs landing text split + GSAP animations,
+ * Designer/Developer loop, and header/icons fade-in. Called from Loading when isLoaded.
+ */
 import { splitText, splitSingleElement, type SplitResult } from "../../utils/splitTextFree";
 import gsap from "gsap";
 import { smoother } from "../Navbar";

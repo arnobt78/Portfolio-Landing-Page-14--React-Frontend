@@ -1,10 +1,14 @@
+/**
+ * Character animations: mixer, intro clip, key clips, typing (bone-filtered),
+ * startIntro (reset + blink), and hover (eyebrow raise on hoverDiv).
+ */
 import * as THREE from "three";
 import { GLTF } from "three-stdlib";
 import { eyebrowBoneNames, typingBoneNames } from "../../../data/boneData";
 
 const setAnimations = (gltf: GLTF) => {
-  let character = gltf.scene;
-  let mixer = new THREE.AnimationMixer(character);
+  const character = gltf.scene;
+  const mixer = new THREE.AnimationMixer(character);
   if (gltf.animations) {
     const introClip = gltf.animations.find(
       (clip) => clip.name === "introAnimation"
@@ -32,6 +36,7 @@ const setAnimations = (gltf: GLTF) => {
       typingAction.timeScale = 1.2;
     }
   }
+  /** Re-play intro and add blink after delay; called when loader finishes */
   function startIntro() {
     const introClip = gltf.animations.find(
       (clip) => clip.name === "introAnimation"
@@ -44,8 +49,9 @@ const setAnimations = (gltf: GLTF) => {
       mixer.clipAction(blink!).play().fadeIn(0.5);
     }, 2500);
   }
+  /** Eyebrow raise on hover over hoverDiv; returns cleanup to remove listeners */
   function hover(gltf: GLTF, hoverDiv: HTMLDivElement) {
-    let eyeBrowUpAction = createBoneAction(
+    const eyeBrowUpAction = createBoneAction(
       gltf,
       mixer,
       "browup",
@@ -83,6 +89,7 @@ const setAnimations = (gltf: GLTF) => {
   return { mixer, startIntro, hover };
 };
 
+/** Create an animation action filtered to specific bone tracks (e.g. typing, eyebrow) */
 const createBoneAction = (
   gltf: GLTF,
   mixer: THREE.AnimationMixer,

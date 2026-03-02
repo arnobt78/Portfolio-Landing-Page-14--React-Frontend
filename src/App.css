@@ -1,6 +1,8 @@
+/* Shared section width; overridden by media queries for smaller viewports */
 .section-container {
   width: 1300px;
 }
+/* Optimize text used in GSAP split-text animations (chars/words/lines) */
 .title,
 .para {
   font-kerning: none;

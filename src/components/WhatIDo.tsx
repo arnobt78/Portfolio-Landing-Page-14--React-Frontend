@@ -1,3 +1,7 @@
+/**
+ * "What I Do" section: two content cards (Develop / Design). On touch devices,
+ * cards are click-to-expand; handleClick toggles active state and sibling styling.
+ */
 import { useEffect, useRef } from "react";
 import "./styles/WhatIDo.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,8 +12,9 @@ const WhatIDo = () => {
     containerRef.current[index] = el;
   };
   useEffect(() => {
+    const containers = containerRef.current;
     if (ScrollTrigger.isTouch) {
-      containerRef.current.forEach((container) => {
+      containers.forEach((container) => {
         if (container) {
           container.classList.remove("what-noTouch");
           container.addEventListener("click", () => handleClick(container));
@@ -17,7 +22,7 @@ const WhatIDo = () => {
       });
     }
     return () => {
-      containerRef.current.forEach((container) => {
+      containers.forEach((container) => {
         if (container) {
           container.removeEventListener("click", () => handleClick(container));
         }
@@ -156,6 +161,7 @@ const WhatIDo = () => {
 
 export default WhatIDo;
 
+/** Toggle expanded card and dim non-active siblings on touch devices */
 function handleClick(container: HTMLDivElement) {
   container.classList.toggle("what-content-active");
   container.classList.remove("what-sibling");

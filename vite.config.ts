@@ -1,3 +1,7 @@
+/**
+ * Vite config: React plugin, raised chunkSizeWarningLimit so large 3D bundles
+ * (e.g. TechStack) do not trigger build warnings.
+ */
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 

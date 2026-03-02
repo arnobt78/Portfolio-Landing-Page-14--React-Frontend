@@ -1,3 +1,4 @@
+/** Bone names in the character GLB used for typing animation (hands, arms, etc.) */
 export const typingBoneNames = [
   "thighL",
   "thighR",
@@ -55,4 +56,5 @@ export const typingBoneNames = [
   "heel02R",
 ];
 
+/** Bone names for eyebrow raise on hover (used in Character hover interaction) */
 export const eyebrowBoneNames = ["eyebrow_L", "eyebrow_R"];

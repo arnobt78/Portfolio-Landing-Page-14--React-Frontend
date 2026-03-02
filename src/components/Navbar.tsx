@@ -1,3 +1,7 @@
+/**
+ * Header: logo, email link, nav (About, Work, Contact). On desktop, # links
+ * are intercepted and smooth-scroll to sections. smoother is a no-op used by initialFX.
+ */
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
@@ -7,8 +11,11 @@ import "./styles/Navbar.css";
 gsap.registerPlugin(ScrollTrigger);
 
 /** No-op for compatibility with initialFX (replaces ScrollSmoother). */
+// eslint-disable-next-line react-refresh/only-export-components
 export const smoother = {
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   paused: (_value: boolean) => {},
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   scrollTop: (_value: number) => {},
   scrollTo: (selector: string) => {
     const el = document.querySelector(selector);

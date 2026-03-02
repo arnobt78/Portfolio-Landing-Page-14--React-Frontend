@@ -1,3 +1,8 @@
+/**
+ * Mouse/touch to normalized coords (-1..1) for head tracking, and touch-end
+ * interpolation reset. handleHeadRotation applies lerp to headBone.rotation
+ * (only when scrollY < 200 on landing).
+ */
 import * as THREE from "three";
 
 export const handleMouseMove = (
@@ -50,8 +55,8 @@ export const handleHeadRotation = (
       mouseX * maxRotation,
       interpolationY
     );
-    let minRotationX = -0.3;
-    let maxRotationX = 0.4;
+    const minRotationX = -0.3;
+    const maxRotationX = 0.4;
     if (mouseY > minRotationX) {
       if (mouseY < maxRotationX) {
         headBone.rotation.x = lerp(

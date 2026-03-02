@@ -1,3 +1,8 @@
+/**
+ * Full-screen loader. percent comes from LoadingProvider; Character loader
+ * drives it via setProgress. When percent >= 100, we set loaded then isLoaded;
+ * when isLoaded, we run initialFX and then setIsLoading(false) to unmount loader.
+ */
 import { useEffect, useState } from "react";
 import "./styles/Loading.css";
 import { useLoading } from "../context/LoadingProvider";
@@ -31,8 +36,9 @@ const Loading = ({ percent }: { percent: number }) => {
         }, 900);
       }
     });
-  }, [isLoaded]);
+  }, [isLoaded, setIsLoading]);
 
+  /** Track mouse for CSS --mouse-x/--mouse-y (e.g. button hover effect) */
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
     const { currentTarget: target } = e;
     const rect = target.getBoundingClientRect();
@@ -92,12 +98,19 @@ const Loading = ({ percent }: { percent: number }) => {
 
 export default Loading;
 
+/**
+ * Shared with Character scene: returns { loaded, percent, clear }. Intervals
+ * drive percent 0→100; loaded() returns a Promise that resolves when percent
+ * reaches 100. Character calls setProgress(callback) and uses loaded().then(...).
+ */
+// Shared with Character scene; separate export for compatibility
+// eslint-disable-next-line react-refresh/only-export-components
 export const setProgress = (setLoading: (value: number) => void) => {
   let percent: number = 0;
 
   let interval = setInterval(() => {
     if (percent <= 50) {
-      let rand = Math.round(Math.random() * 5);
+      const rand = Math.round(Math.random() * 5);
       percent = percent + rand;
       setLoading(percent);
     } else {

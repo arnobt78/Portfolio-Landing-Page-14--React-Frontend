@@ -1,3 +1,7 @@
+/**
+ * Scene lighting: directional + point light, HDR environment. setPointLight
+ * drives point light from character’s screen light mesh; turnOnLights runs after intro.
+ */
 import * as THREE from "three";
 import { RGBELoader } from "three-stdlib";
 import { gsap } from "gsap";
@@ -27,9 +31,11 @@ const setLighting = (scene: THREE.Scene) => {
       scene.environmentRotation.set(5.76, 85.85, 1);
     });
 
-  function setPointLight(screenLight: any) {
-    if (screenLight.material.opacity > 0.9) {
-      pointLight.intensity = screenLight.material.emissiveIntensity * 20;
+  function setPointLight(screenLight: THREE.Object3D | null) {
+    if (!screenLight || !(screenLight as THREE.Mesh).material) return;
+    const mat = (screenLight as THREE.Mesh).material as THREE.MeshStandardMaterial;
+    if (mat.opacity > 0.9) {
+      pointLight.intensity = (mat.emissiveIntensity ?? 0) * 20;
     } else {
       pointLight.intensity = 0;
     }

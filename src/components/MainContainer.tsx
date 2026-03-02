@@ -1,3 +1,8 @@
+/**
+ * Main layout: cursor, navbar, social icons, and scrollable sections.
+ * children = Character (3D) on desktop only. TechStack is lazy-loaded for desktop.
+ * On resize, setSplitText re-applies GSAP split-text and isDesktopView is updated.
+ */
 import { lazy, PropsWithChildren, Suspense, useEffect, useState } from "react";
 import About from "./About";
 import Career from "./Career";
@@ -34,6 +39,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <Cursor />
       <Navbar />
       <SocialIcons />
+      {/* 3D character only on desktop; on mobile it is rendered inside Landing as children */}
       {isDesktopView && children}
       <div id="smooth-wrapper">
         <div id="smooth-content">
@@ -43,6 +49,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <WhatIDo />
             <Career />
             <Work />
+            {/* 3D tech spheres section; lazy-loaded and desktop-only */}
             {isDesktopView && (
               <Suspense fallback={<div>Loading....</div>}>
                 <TechStack />

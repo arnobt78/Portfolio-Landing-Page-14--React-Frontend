@@ -1,3 +1,8 @@
+/**
+ * Tech stack 3D section: React Three Fiber canvas with Rapier physics. Spheres
+ * with tech logos are pushed by a kinematic Pointer (mouse); N8AO for ambient occlusion.
+ * isActive turns on physics when user has scrolled past the work section.
+ */
 import * as THREE from "three";
 import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -38,6 +43,7 @@ type SphereProps = {
   isActive: boolean;
 };
 
+/** Physics sphere with logo texture; receives impulse toward pointer when isActive */
 function SphereGeo({
   vec = new THREE.Vector3(),
   scale,
@@ -96,6 +102,7 @@ type PointerProps = {
   isActive: boolean;
 };
 
+/** Invisible kinematic body that follows pointer; spheres are pushed away from it */
 function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
   const ref = useRef<RapierRigidBody>(null);
 
@@ -128,6 +135,7 @@ const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
+    /** Enable physics interaction only after user has scrolled past #work */
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
       const threshold = document

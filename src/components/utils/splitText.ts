@@ -1,3 +1,7 @@
+/**
+ * Applies GSAP split-text animations to .para (words) and .title (chars).
+ * Called on mount/resize from MainContainer. Reverts previous split/anim before re-splitting.
+ */
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { splitSingleElement, type SplitResult } from "../../utils/splitTextFree";

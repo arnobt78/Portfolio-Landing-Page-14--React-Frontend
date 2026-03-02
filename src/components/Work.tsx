@@ -1,3 +1,8 @@
+/**
+ * Work gallery: horizontal scroll. useGSAP runs once on mount. ScrollTrigger pins
+ * the section and scrubs a timeline that translates .work-flex by the total
+ * scrollable width (setTranslateX). Cleanup kills the timeline and trigger on unmount.
+ */
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import gsap from "gsap";
@@ -10,6 +15,7 @@ const Work = () => {
   useGSAP(() => {
   let translateX: number = 0;
 
+  /** Compute total horizontal scroll distance from work-box count and container width */
   function setTranslateX() {
     const box = document.getElementsByClassName("work-box");
     const rectLeft = document
@@ -17,14 +23,14 @@ const Work = () => {
       .getBoundingClientRect().left;
     const rect = box[0].getBoundingClientRect();
     const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
-    let padding: number =
+    const padding: number =
       parseInt(window.getComputedStyle(box[0]).padding) / 2;
     translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
   }
 
   setTranslateX();
 
-  let timeline = gsap.timeline({
+  const timeline = gsap.timeline({
     scrollTrigger: {
       trigger: ".work-section",
       start: "top top",

@@ -1,3 +1,7 @@
+/**
+ * Hero section: name headline and "A Creative Designer/Developer" text.
+ * children: on mobile, the 3D Character is rendered here; on desktop it is rendered by MainContainer as a sibling.
+ */
 import { PropsWithChildren } from "react";
 import "./styles/Landing.css";
 

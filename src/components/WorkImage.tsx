@@ -1,3 +1,7 @@
+/**
+ * Work item image; optional video on hover (video path under src/assets).
+ * Shows arrow overlay when link is provided.
+ */
 import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 
