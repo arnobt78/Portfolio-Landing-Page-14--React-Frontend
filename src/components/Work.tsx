@@ -52,14 +52,14 @@ const Work = () => {
     ScrollTrigger.getById("work")?.kill();
   };
 }, []);
-  /* Demo images from Unsplash (replace with your own in public/images if preferred) */
+  /* Placeholder images from Lorem Picsum (replace with /images/yourfile.webp for local) */
   const workImages = [
-    "https://images.unsplash.com/photo-1498050104123-6f4ee4c011a2?w=800&q=80",
-    "https://images.unsplash.com/photo-1460925891237-afd8db44a339?w=800&q=80",
-    "https://images.unsplash.com/photo-1555066931-4365d14fea00?w=800&q=80",
-    "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
-    "https://images.unsplash.com/photo-1504384308090-c894fd59ccb5?w=800&q=80",
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+    "https://picsum.photos/seed/work1/800/600",
+    "https://picsum.photos/seed/work2/800/600",
+    "https://picsum.photos/seed/work3/800/600",
+    "https://picsum.photos/seed/work4/800/600",
+    "https://picsum.photos/seed/work5/800/600",
+    "https://picsum.photos/seed/work6/800/600",
   ];
 
   return (
