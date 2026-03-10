@@ -11,7 +11,12 @@ A single-page portfolio showcase built with React, Vite, and TypeScript. It feat
 
 - **Live Demo:** [https://portfolio-ui-14.vercel.app/](https://portfolio-ui-14.vercel.app/)
 
-<img width="1884" height="936" alt="Screenshot 2026-03-10 at 11 57 39" src="https://github.com/user-attachments/assets/9a387c09-9550-483f-8224-7220102d30c5" /> <img width="1883" height="931" alt="Screenshot 2026-03-10 at 11 57 54" src="https://github.com/user-attachments/assets/6f13844a-54b0-4875-a58a-08c66dc1eb1f" /> <img width="1893" height="934" alt="Screenshot 2026-03-10 at 11 58 09" src="https://github.com/user-attachments/assets/af03c0d0-88c3-4ebc-b38a-d35a0556ae37" /> <img width="1886" height="931" alt="Screenshot 2026-03-10 at 11 58 21" src="https://github.com/user-attachments/assets/a9057992-f240-44b7-9633-9492729e3dee" /> <img width="1877" height="937" alt="Screenshot 2026-03-10 at 11 58 34" src="https://github.com/user-attachments/assets/0afea1de-7d0d-4f43-a3ee-f1ba4154d834" /> <img width="1890" height="941" alt="Screenshot 2026-03-10 at 11 58 55" src="https://github.com/user-attachments/assets/b5867f24-8122-4da0-bfe1-4b88d9cc7cf7" />
+![Screenshot 2026-03-10 at 11 57 39](https://github.com/user-attachments/assets/9a387c09-9550-483f-8224-7220102d30c5)
+![Screenshot 2026-03-10 at 11 57 54](https://github.com/user-attachments/assets/6f13844a-54b0-4875-a58a-08c66dc1eb1f)
+![Screenshot 2026-03-10 at 11 58 09](https://github.com/user-attachments/assets/af03c0d0-88c3-4ebc-b38a-d35a0556ae37)
+![Screenshot 2026-03-10 at 11 58 21](https://github.com/user-attachments/assets/a9057992-f240-44b7-9633-9492729e3dee)
+![Screenshot 2026-03-10 at 11 58 34](https://github.com/user-attachments/assets/0afea1de-7d0d-4f43-a3ee-f1ba4154d834)
+![Screenshot 2026-03-10 at 11 58 55](https://github.com/user-attachments/assets/b5867f24-8122-4da0-bfe1-4b88d9cc7cf7)
 
 ## Table of Contents
 
